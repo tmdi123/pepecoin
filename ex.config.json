@@ -1,0 +1,21 @@
+#!/usr/bin/env python3
+# Example Pepecoin RPC usage
+# Save this file as pepecoin_example.py
+
+from bitcoinrpc.authproxy import AuthServiceProxy
+
+# Replace with your Pepecoin Core RPC credentials
+rpc_user = "your_rpc_username"
+rpc_password = "your_rpc_password"
+
+# Connect to local Pepecoin node
+rpc_connection = AuthServiceProxy(f"http://{rpc_user}:{rpc_password}@127.0.0.1:33873")
+
+# Get blockchain info
+info = rpc_connection.getblockchaininfo()
+print("Pepecoin blockchain info:")
+print(info)
+
+# Get wallet balance
+balance = rpc_connection.getbalance()
+print("Your wallet balance:", balance, "Ᵽ")
